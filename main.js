@@ -19,6 +19,7 @@ async function callOpenAI() {
     model: 'gpt-3.5-turbo',
     messages: [{
       role: 'user',
+      // This should have "await". Without it, a promise is sent to the API, which breaks Helicone's UI.
       content: getPrompt("Hello, my name is John.")
     }]
   });
